@@ -296,7 +296,7 @@ int sendPdv(void *par)
     // The source and destination IP addresses of the packet have already been set in the initialization above
     // and they will permenantely be the IP addresses of the left and right interfaces of the Tester 
     // and based on the direction of the test 
-    bg_pkt_mbuf[i] = mkTestFrame6(ipv6_frame_size, pkt_pool, direction, dst_mac, src_mac, src_bg, dst_bg, var_sport, var_dport);
+    bg_pkt_mbuf[i] = mkPdvFrame6(ipv6_frame_size, pkt_pool, direction, dst_mac, src_mac, src_bg, dst_bg, var_sport, var_dport);
     pkt = rte_pktmbuf_mtod(bg_pkt_mbuf[i], uint8_t *); // Access the Test Frame in the message buffer
     bg_udp_sport[i] = (uint16_t *)(pkt + 54);
     bg_udp_dport[i] = (uint16_t *)(pkt + 56);
