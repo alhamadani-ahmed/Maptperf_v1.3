@@ -321,12 +321,12 @@ int Throughput::readConfigFile(const char *filename)
         return -1;
       }
     }
-    else if ((pos = findKey(line, "BMR-IPv6-Prefx-Length")) >= 0)
+    else if ((pos = findKey(line, "BMR-IPv6-prefix-length")) >= 0)
     {
       sscanf(line + pos, "%u", &bmr_ipv6_prefix_length);
       if (bmr_ipv6_prefix_length < 1 || bmr_ipv6_prefix_length > 64)
       {
-        std::cerr << "Input Error: 'BMR-IPv6-Prefix-Length' must be >= 1 and <= 64." << std::endl;
+        std::cerr << "Input Error: 'BMR-IPv6-prefix-length' must be >= 1 and <= 64." << std::endl;
         return -1;
       }
     }
@@ -338,21 +338,21 @@ int Throughput::readConfigFile(const char *filename)
         return -1;
       }
     }
-    else if ((pos = findKey(line, "BMR-IPv4-Prefx-Length")) >= 0)
+    else if ((pos = findKey(line, "BMR-IPv4-prefix-length")) >= 0)
     {
       sscanf(line + pos, "%u", &bmr_ipv4_prefix_length);
       if (bmr_ipv4_prefix_length < 0 || bmr_ipv4_prefix_length > 32)
       {
-        std::cerr << "Input Error: 'BMR-IPv4-Prefix-Length' must be >= 0 and <= 32." << std::endl;
+        std::cerr << "Input Error: 'BMR-IPv4-prefix-length' must be >= 0 and <= 32." << std::endl;
         return -1;
       }
     }
-    else if ((pos = findKey(line, "BMR-EA-Len")) >= 0)
+    else if ((pos = findKey(line, "BMR-EA-length")) >= 0)
     {
       sscanf(line + pos, "%u", &bmr_EA_length);
       if (bmr_EA_length < 0 || bmr_EA_length > 48)
       { // accoding to RFC 7597 section 5.2
-        std::cerr << "Input Error: 'BMR-EA-Len' must be >= 0 and <= 48." << std::endl;
+        std::cerr << "Input Error: 'BMR-EA-length' must be >= 0 and <= 48." << std::endl;
         return -1;
       }
     }
@@ -364,12 +364,12 @@ int Throughput::readConfigFile(const char *filename)
         return -1;
       }
     }
-    else if ((pos = findKey(line, "DMR-IPv6-Prefx-Length")) >= 0)
+    else if ((pos = findKey(line, "DMR-IPv6-prefix-length")) >= 0)
     {
       sscanf(line + pos, "%u", &dmr_ipv6_prefix_length);
       if (dmr_ipv6_prefix_length < 64 || dmr_ipv6_prefix_length > 96)
       { // according to RFC 7599 section 5.1
-        std::cerr << "Input Error: 'DMR-IPv6-Prefix-Length' must be >= 64 and <= 96." << std::endl;
+        std::cerr << "Input Error: 'DMR-IPv6-prefix-length' must be >= 64 and <= 96." << std::endl;
         return -1;
       }
     }
